@@ -13,3 +13,6 @@ later projects.
 
 Here is a screenshot of what this project looks like (so far): 
 ![screenshot](../master/screenshots/snake1.png?raw=true)
+
+Credit for images goes to FamTrinli:
+https://yadi.sk/d/uqz1HerKrKWjV
