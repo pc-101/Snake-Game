@@ -17,3 +17,5 @@ Here is a screenshot of what this project looks like (so far):
 Credit for the white and green block textures goes to FamTrinli:
 https://yadi.sk/d/uqz1HerKrKWjV
 (The blue block was a simple recoloring in photoshop)
+Credit for the cloudy, background pixel for the menu goes to: 
+https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/BTrHt7uCiu335hjs/retro-video-game-pixel-art-blue-sky-background-pixelated-clouds-hd-animation_hihuha98x_thumbnail-full01.png
