@@ -1,18 +1,21 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef GAME_INCLUDED
+#define GAME_INCLUDED
 
 #include "GameObject.h"
+#include "cScreens.h"
 
-class Game {
+class Game : public cScreen {
 public: 
 	Game(); 
 	bool isGameOver();
-	void run(); 
 	void maintainSnakeSize(); 
+	virtual int Run(sf::RenderWindow &App); 
 
 	  // Getters
 	const int getWidth(); 
 	const int getHeight(); 
+	const int getRenderWidth(); 
+	const int getRenderHeight(); 
 
 private: 
 	const int WIDTH			= 30; 
@@ -28,4 +31,4 @@ private:
 	void setup();
 };
 
-#endif // GAME_H
+#endif // GAME_INCLUDED

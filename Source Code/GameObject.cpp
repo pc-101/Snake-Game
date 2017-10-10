@@ -3,11 +3,13 @@
 #include "GameObject.h"
 #include "Game.h"
 
-Coord::Coord() {
+Coord::Coord() 
+{
 	this->posx = 0; 
 	this->posy = 0; 
 }
-Coord::Coord(int x, int y) {
+Coord::Coord(int x, int y) 
+{
 	this->posx = x;
 	this->posy = y;
 }
@@ -24,13 +26,15 @@ bool Coord::operator==(const Coord & rhs) const
   GameObject
 *************/
 
-gameObject::gameObject() {
+gameObject::gameObject() 
+{
 	this->pair.posx = 1; 
 	this->pair.posy = 1; 
 	isAlive = true; 
 }
 
-gameObject::gameObject(int x, int y) {
+gameObject::gameObject(int x, int y) 
+{
 	this->pair.posx = x;
 	this->pair.posy = y;
 	isAlive = true; 
@@ -85,7 +89,9 @@ Snake::Snake(int x, int y)
 
 void Snake::changeDirection(Direction d)
 {
-	dir = d; 
+	  // Only change direction if the snake doesn't backtrack
+	if (d != getOppositeDir(dir))
+		dir = d; 
 }
 
 void Snake::animate()
@@ -103,7 +109,7 @@ void Snake::animate()
 		moveObject(1, 0); 
 		break;
 	case DOWN:
-		moveObject(0, +1); 
+		moveObject(0, 1); 
 		break;
 	default:
 		break;
@@ -118,6 +124,26 @@ int Snake::getSize()
 Direction Snake::getDir()
 {
 	return dir;
+}
+
+Direction Snake::getOppositeDir(Direction d) {
+	switch (d)
+	{
+	case LEFT:
+		return RIGHT; 
+		break;
+	case UP:
+		return DOWN; 
+		break;
+	case RIGHT:
+		return LEFT; 
+		break;
+	case DOWN:
+		return UP; 
+		break;
+	default:
+		break;
+	}
 }
 
 void Snake::getBigger()
