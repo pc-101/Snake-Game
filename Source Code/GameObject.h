@@ -1,5 +1,5 @@
-#ifndef GAMEOBJ_INCLUDED
-#define GAMEOBJ_INCLUDED
+#ifndef GAMEOBJ_H_
+#define GAMEOBJ_H_
 
 #include <vector>
 
@@ -49,7 +49,6 @@ public:
 	  // Getters
 	int getSize(); 
 	Direction getDir(); 
-	Direction getOppositeDir(Direction d); 
 
 	  // Setters
 	void getBigger(); 
@@ -75,4 +74,4 @@ private:
 };
 
 
-#endif // GAMEOBJ_INCLUDED
+#endif // GAMEOBJ_H_
