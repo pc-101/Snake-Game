@@ -3,16 +3,11 @@
 #include "GameObject.h"
 #include "Game.h"
 
-Coord::Coord() 
-{
-	this->posx = 0; 
-	this->posy = 0; 
-}
-Coord::Coord(int x, int y) 
-{
-	this->posx = x;
-	this->posy = y;
-}
+Coord::Coord() : posx(0), posy(0)
+{}
+
+Coord::Coord(int x, int y) : posx(x), posy(y)
+{}
 
 bool Coord::operator==(const Coord & rhs) const
 {
@@ -26,31 +21,29 @@ bool Coord::operator==(const Coord & rhs) const
   GameObject
 *************/
 
-gameObject::gameObject() 
+gameObject::gameObject() : isAlive(true)
 {
 	this->pair.posx = 1; 
-	this->pair.posy = 1; 
-	isAlive = true; 
+	this->pair.posy = 1;  
 }
 
-gameObject::gameObject(int x, int y) 
+gameObject::gameObject(int x, int y) : isAlive(true)
 {
 	this->pair.posx = x;
 	this->pair.posy = y;
-	isAlive = true; 
 }
 
-int gameObject::getX()
+const int gameObject::getX() const
 {
 	return pair.posx;
 }
 
-int gameObject::getY()
+const int gameObject::getY() const
 {
 	return pair.posy; 
 }
 
-bool gameObject::isDead()
+const bool gameObject::isDead() const
 {
 	return isAlive; 
 }

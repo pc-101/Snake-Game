@@ -7,11 +7,10 @@
 	Game
 *************/
 
-Game::Game()
+Game::Game() : gameOver(false) 
 {
 	s[0].setObject(1, 1);					// Initialize member snake variable
 	f.setObject(WIDTH / 2, HEIGHT / 2);		// Construct fruit in the middle of the board
-	gameOver = false; 
 }
 
 void Game::setup() 
@@ -133,8 +132,12 @@ bool Game::isGameOver()
 
 int Game::Run(sf::RenderWindow &App) 
 {
-	setup(); 
-	return 0; 
+	setup();
+
+	if (!isGameOver())
+		return 0;	// Return 0 for the Menu screen if game isn't over
+	else
+		return 2;	// Return 2 for the End Menu screen if game is over
 }
 
 void Game::maintainSnakeSize() 

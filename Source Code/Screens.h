@@ -7,6 +7,7 @@
   // Include different screens
 #include "Menu.h"
 #include "Game.h"
+#include "EndScreen.h"
 
 
 #endif // SCREENS_INCLUDED

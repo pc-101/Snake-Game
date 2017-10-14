@@ -1,1 +1,5 @@
-Contains screenshots of the program
+Contains screenshots of the program:
+
+- Gameplay
+- Main menu (pause menu looks very similar)
+- End game menu

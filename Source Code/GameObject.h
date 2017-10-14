@@ -21,14 +21,14 @@ public:
 	gameObject(int x, int y);			// Secondary constructor
 
 	  // Getters
-	int getX(); 
-	int getY(); 
-	bool isDead(); 
-	void setDead(); 
+	const int getX() const; 
+	const int getY() const; 
+	const bool isDead() const; 
 
 	  // Setters
 	void moveObject(int x, int y);		// Move object by incrementing pair(x,y) values by corresponding x,y params
 	void setObject(int x, int y);
+	void setDead();
 private:
 	  // Holds the coordinates of our gameObject
 	Coord pair;

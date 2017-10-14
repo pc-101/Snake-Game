@@ -21,7 +21,6 @@ int Menu::Run(sf::RenderWindow &App)
 	sf::Text menu1;		// Play
 	sf::Text menu2;		// Quit
 	sf::Text menu3;		// Continue
-	sf::Text menu4;		// Play again
 
 	if (!t.loadFromFile("images/background.png"))
 	{
@@ -29,7 +28,6 @@ int Menu::Run(sf::RenderWindow &App)
 		return (-1);
 	}
 	s.setTexture(t);
-	s.setColor(sf::Color(255, 255, 255, alpha));
 
 	if (!f.loadFromFile("fonts/font.ttf"))
 	{
@@ -53,36 +51,24 @@ int Menu::Run(sf::RenderWindow &App)
 	menu3.setString("Continue");
 	menu3.setPosition({ 280.f, 160.f });
 
-	menu4.setFont(f); 
-	menu4.setCharacterSize(20); 
-	menu4.setString("Play again");
-	menu4.setPosition({ 280.f, 160.f }); 
-
-
-
-	if (playing)
-	{
-		alpha = alpha_max; 
-	}
-
 	  // Poll for events
 	while (App.isOpen())
 	{
 		while (App.pollEvent(e)) {
-			  // Window closed
-			if (e.type == sf::Event::EventType::Closed) 
-				App.close(); 
+			// Window closed
+			if (e.type == sf::Event::EventType::Closed)
+				App.close();
 
 			if (e.type == sf::Event::KeyPressed)
 			{
-				switch (e.key.code) 
+				switch (e.key.code)
 				{
-				case sf::Keyboard::Up: 
-					menu = 0; 
-					break; 
-				case sf::Keyboard::Down: 
-					menu = 1; 
-					break; 
+				case sf::Keyboard::Up:
+					menu = 0;
+					break;
+				case sf::Keyboard::Down:
+					menu = 1;
+					break;
 				case sf::Keyboard::Return:
 					if (menu == 0)
 					{
@@ -90,23 +76,20 @@ int Menu::Run(sf::RenderWindow &App)
 						return 1;
 					}
 					else
-						return -1; 
-					break; 
+						return -1;
+					break;
 				default:
-					break; 
+					break;
 				}
 			}
 		}
-		if (alpha < alpha_max)
-			alpha++; 
-		s.setColor(sf::Color(255, 255, 255, alpha / alpha_div)); 
 
-		  // Shows the user which option he/she is highlighting
+		// Shows the user which option he/she is highlighting
 		if (menu == 0)
 		{
-			menu1.setFillColor(sf::Color(255, 0, 0, 255)); 
-			menu2.setFillColor(sf::Color(255, 255, 255, 255)); 
-			menu3.setFillColor(sf::Color(255, 0, 0, 255)); 
+			menu1.setFillColor(sf::Color(255, 0, 0, 255));
+			menu2.setFillColor(sf::Color(255, 255, 255, 255));
+			menu3.setFillColor(sf::Color(255, 0, 0, 255));
 		}
 		else
 		{
@@ -115,22 +98,19 @@ int Menu::Run(sf::RenderWindow &App)
 			menu3.setFillColor(sf::Color(255, 255, 255, 255));
 		}
 
-		  // Clear screen
-		App.clear(); 
+		// Clear screen
+		App.clear();
 
-		  // Draw
-		App.draw(s); 
-		
-		if (alpha == alpha_max)
-		{
-			if (playing)
-				App.draw(menu3);
-			else
-				App.draw(menu1); 
-			App.draw(menu2); 
-		}
-		App.display(); 
+		// Draw
+		App.draw(s);
+		if (playing)
+			App.draw(menu3);
+		else
+			App.draw(menu1);
+		App.draw(menu2);
+
+		App.display();
+
 	}
-
 	return -1; 
 }
