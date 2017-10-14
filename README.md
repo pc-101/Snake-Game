@@ -2,9 +2,7 @@
 Currently incomplete, but functional.
 
 - Things to do: 
-  - Make snake lose a life or die (one of the two) if it hits itself
-  - Implement menu and end game states
-
+  - Make snake die if it hits itself
   
 Through this project I was able to learn how to use the SFML library to render graphics, poll for events such as 
 keyboard input, and practice with OOP methods. Additionally, I tried to steer away from the "using namespace" practice
