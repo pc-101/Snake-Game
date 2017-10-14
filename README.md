@@ -10,9 +10,9 @@ that I was introduced to in early days of C++. Still room for much improvement, 
 later projects. 
 
 Here are screenshots of what this project looks like:  
-![screenshot](../master/screenshots/snake1.png?raw=true)
-![screenshot](../master/screenshots/snake2.png?raw=true)
-![screenshot](../master/screenshots/snake3.png?raw=true)
+![screenshot](../master/screenshots/snake1.png?raw=true)  
+![screenshot](../master/screenshots/snake2.png?raw=true)  
+![screenshot](../master/screenshots/snake3.png?raw=true)  
 
 Credit for the white and green block textures goes to FamTrinli:
 https://yadi.sk/d/uqz1HerKrKWjV
